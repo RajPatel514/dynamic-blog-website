@@ -1,7 +1,9 @@
 body {
     margin: 150px;
     font-family: 'Times New Roman', Times, serif;
-    background-color: #dbc9c9;
+    font-size: large;
+    background-color: #e7cccc;
+    text-align: center;
 }
 
 h1 {
