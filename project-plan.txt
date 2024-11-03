@@ -1,2 +1,16 @@
 
 Project Plans
+
+Step 1 - Create All html files
+Step 2 - Add general styling elements
+Step 3 - Add functional JS code accross all 3 html's
+
+Step 3a - Create JS code for new-post html
+Step 3b - Create JS for index.html
+Step 3c - Finally implement JS for post.html
+
+Step 4 - Finalize CSS by adding more creative stlying and media
+
+Step 5 - Debug and adjust code if needed
+
+Step 6 - Submit
