@@ -1,5 +1,4 @@
 
-
 //Scripts for New Post
 const prefNameInput = document.getElementById("prefName");
 const titleName = document.getElementById("title");
@@ -7,7 +6,6 @@ const tripInfo = document.getElementById("tripDetails");
 
 const saveButton = document.getElementById("save-btn");
 const clearPost = document.getElementById("clear-post");
-
 
 // Store post in local storage
 if (saveButton) {
@@ -22,6 +20,17 @@ if (saveButton) {
     });
 }
 
+if (saveButton) {
+    saveButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        let titleSave = titleName.value;
+
+        if (titleSave) {
+            localStorage.setItem("title", titleSave);
+            window.location.href = "index.html";
+        }
+    });
+}
 //Scripts for Home Page/index
 const prefNameDisplay = document.getElementById("displayName");
 
@@ -31,6 +40,21 @@ function loadPerfName() {
         prefNameDisplay.textContent = reloadName;
     }
 }
-
 loadPerfName();
+
+const titleDisplay = document.getElementById("displayTitle");
+
+function loadTitle() {
+    const reloadTitle = localStorage.getItem("title");
+    if (reloadTitle) {
+        titleDisplay.textContent = reloadTitle;
+    }
+}
+loadPerfName();
+loadTitle();
+
+
+
+
+
 //Scripts for Post - View / Edit posts
