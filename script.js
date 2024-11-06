@@ -7,7 +7,7 @@ const tripInfo = document.getElementById("tripDetails");
 const saveButton = document.getElementById("save-btn");
 const clearPost = document.getElementById("clear-post");
 
-// Store post in local storage
+// Store name data in local storage
 if (saveButton) {
     saveButton.addEventListener("click", function (event) {
         event.preventDefault();
@@ -15,11 +15,10 @@ if (saveButton) {
 
         if (savedName) {
             localStorage.setItem("prefName", savedName);
-            window.location.href = "index.html";
         }
     });
 }
-
+// Store title data in local storage
 if (saveButton) {
     saveButton.addEventListener("click", function (event) {
         event.preventDefault();
@@ -27,21 +26,36 @@ if (saveButton) {
 
         if (titleSave) {
             localStorage.setItem("title", titleSave);
+        }
+    });
+}
+
+//Store blog post details
+if (saveButton) {
+    saveButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        let postSave = tripInfo.value;
+
+        if (postSave) {
+            localStorage.setItem("tripDetails", postSave);
             window.location.href = "index.html";
         }
     });
 }
-//Scripts for Home Page/index
+
+//Scripts for Homepage/Post page
+//Get name data
 const prefNameDisplay = document.getElementById("displayName");
 
 function loadPerfName() {
     const reloadName = localStorage.getItem("prefName");
     if (reloadName) {
-        prefNameDisplay.textContent = reloadName;
+        prefNameDisplay.textContent = reloadName + " -";
     }
 }
 loadPerfName();
 
+//Get title data
 const titleDisplay = document.getElementById("displayTitle");
 
 function loadTitle() {
@@ -50,11 +64,17 @@ function loadTitle() {
         titleDisplay.textContent = reloadTitle;
     }
 }
-loadPerfName();
 loadTitle();
 
+//Get trip data
+const tripDisplay = document.getElementById("displayPost");
 
-
-
+function loadTrip() {
+    const reloadTrip = localStorage.getItem("tripDetails");
+    if (reloadTrip) {
+        tripDisplay.textContent = "- " + reloadTrip;
+    }
+}
+loadTrip();
 
 //Scripts for Post - View / Edit posts
