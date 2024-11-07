@@ -8,11 +8,13 @@ const saveButton = document.getElementById("save-btn");
 const clearPost = document.getElementById("clear-post");
 
 //Form validations for empty frields for each individual input
-// Store name data in local storage
+// Store name, title, and post data in local storage
 if (saveButton) {
     saveButton.addEventListener("click", function (event) {
         event.preventDefault();
         let savedName = prefNameInput.value;
+        let titleSave = titleName.value;
+        let postSave = tripInfo.value;
 
         if (savedName) {
             localStorage.setItem("prefName", savedName);
@@ -20,13 +22,6 @@ if (saveButton) {
             if (!savedName);
             alert("Name cannot be empty!");
         }
-    });
-}
-// Store title data in local storage
-if (saveButton) {
-    saveButton.addEventListener("click", function (event) {
-        event.preventDefault();
-        let titleSave = titleName.value;
 
         if (titleSave) {
             localStorage.setItem("title", titleSave);
@@ -34,18 +29,9 @@ if (saveButton) {
             if (!titleSave);
             alert("Title cannot be empty!");
         }
-    });
-}
-
-//Store blog post details, return to homepage upon completion and display message
-if (saveButton) {
-    saveButton.addEventListener("click", function (event) {
-        event.preventDefault();
-        let postSave = tripInfo.value;
 
         if (postSave) {
             localStorage.setItem("tripDetails", postSave);
-            alert("Post Saved!");
         } else {
             if (!postSave);
             alert("We want to know more about your trip!");
@@ -53,8 +39,20 @@ if (saveButton) {
     });
 }
 
+//Submit post if all fields are entered
+if (saveButton) {
+    saveButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        let postSave = tripInfo.value;
+        let titleSave = titleName.value;
+        let savedName = prefNameInput.value;
 
-
+        if (postSave && titleSave && savedName) {
+            alert("Post Saved! returning to Home Page");
+            window.location.href = "index.html";
+        }
+    });
+}
 //Scripts for Homepage/Post page
 //Get name data
 const prefNameDisplay = document.getElementById("displayName");
