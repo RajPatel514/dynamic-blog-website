@@ -30,7 +30,7 @@ if (saveButton) {
     });
 }
 
-//Store blog post details
+//Store blog post details, return to homepage upon completion and display message
 if (saveButton) {
     saveButton.addEventListener("click", function (event) {
         event.preventDefault();
@@ -38,6 +38,7 @@ if (saveButton) {
 
         if (postSave) {
             localStorage.setItem("tripDetails", postSave);
+            alert("Post Saved! Returning to Home Page!");
             window.location.href = "index.html";
         }
     });
@@ -76,5 +77,3 @@ function loadTrip() {
     }
 }
 loadTrip();
-
-//Scripts for Post - View / Edit posts

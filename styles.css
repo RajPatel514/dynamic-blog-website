@@ -1,8 +1,13 @@
 body {
-    margin: 150px;
+    display:block;
+    padding: 20px;
     font-family: 'Times New Roman', Times, serif;
     font-size: large;
     background-color: #e1e6fd;
+    text-align: center;
+}
+
+header{
     text-align: center;
 }
 
@@ -64,3 +69,21 @@ button:hover {
     transition: .5s;
     background-color: #fee5e8;
 }
+
+@media only screen and (max-width: 600px) {
+    header, 
+    footer {
+        padding: 5px;
+    }
+  
+    li a {
+        display: block;
+        text-align: center;
+    }
+
+    #travelPost {
+        text-align: center;
+    }
+  
+  }
+  
