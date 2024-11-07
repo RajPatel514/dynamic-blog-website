@@ -7,6 +7,7 @@ const tripInfo = document.getElementById("tripDetails");
 const saveButton = document.getElementById("save-btn");
 const clearPost = document.getElementById("clear-post");
 
+//Form validations for empty frields for each individual input
 // Store name data in local storage
 if (saveButton) {
     saveButton.addEventListener("click", function (event) {
@@ -15,6 +16,9 @@ if (saveButton) {
 
         if (savedName) {
             localStorage.setItem("prefName", savedName);
+        } else {
+            if (!savedName);
+            alert("Name cannot be empty!");
         }
     });
 }
@@ -26,6 +30,9 @@ if (saveButton) {
 
         if (titleSave) {
             localStorage.setItem("title", titleSave);
+        } else {
+            if (!titleSave);
+            alert("Title cannot be empty!");
         }
     });
 }
@@ -38,11 +45,15 @@ if (saveButton) {
 
         if (postSave) {
             localStorage.setItem("tripDetails", postSave);
-            alert("Post Saved! Returning to Home Page!");
-            window.location.href = "index.html";
+            alert("Post Saved!");
+        } else {
+            if (!postSave);
+            alert("We want to know more about your trip!");
         }
     });
 }
+
+
 
 //Scripts for Homepage/Post page
 //Get name data
