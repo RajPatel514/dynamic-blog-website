@@ -77,3 +77,17 @@ function loadTrip() {
     }
 }
 loadTrip();
+
+//Deleting data from local storage
+const deleteData = document.getElementById("delete-post")
+
+if (deleteData) {
+    deleteData.addEventListener("click", function (event) {
+        event.preventDefault();
+        localStorage.removeItem("prefName");
+        localStorage.removeItem("title");
+        localStorage.removeItem("tripDetails");
+        alert("Post Deleted! Returning to Home Page!");
+        window.location.href = "index.html";
+    });
+}
