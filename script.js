@@ -100,3 +100,13 @@ if (deleteData) {
         window.location.href = "index.html";
     });
 }
+//Adding Edit feature to post.html //NOT FUNCTIONAL YET
+
+// const editButton = document.getElementById("edit-post");
+
+// if (editButton) {
+//     editButton.addEventListener("click", function (event) {
+//         event.preventDefault();
+//         window.location.href = "new-post.html";
+//     });
+// }
