@@ -103,10 +103,14 @@ if (deleteData) {
 //Adding Edit feature to post.html //NOT FUNCTIONAL YET
 
 // const editButton = document.getElementById("edit-post");
-
 // if (editButton) {
 //     editButton.addEventListener("click", function (event) {
 //         event.preventDefault();
 //         window.location.href = "new-post.html";
 //     });
 // }
+
+//Displaying uploaded image //NOT FUNCTIONAL YET
+
+// const imageInput = document.getElementById('image');
+// const displayImage = document.getElementById('displayedImage');
